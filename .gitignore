@@ -1,0 +1,6 @@
+# Ignore all files and folders in the .vagrant directory
+.vagrant/
+
+# Ignore all .bak files
+*.bak
+
