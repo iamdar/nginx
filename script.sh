@@ -4,7 +4,7 @@
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 
 # Update
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
 
 # Check if git is installed
 command -v git &> /dev/null && { echo "Git is already installed. Version: $(git --version)"; } || { echo "Git is not installed. Installing Git..."; sudo apt install -y git; }
