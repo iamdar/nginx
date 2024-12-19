@@ -29,15 +29,7 @@ git clone https://github.com/iamdar/CheckmateChuckles.git /var/www/CheckmateChuc
 unlink /etc/nginx/sites-enabled/default
 
 # setting the conf
-cat << EOF > /etc/nginx/conf.d/CheckmateChuckles.conf
-server {
-    listen 80 default_server;
-    root /var/www/CheckmateChuckles;
-
-    server_name CheckmateChuckles.local www.CheckmateChuckles.local;
-    index index.html index.htm index.php;
-}
-EOF
+cp /vagrant/CheckmateChuckles.conf /etc/nginx/conf.d/CheckmateChuckles.conf
 
 # reload config
 nginx -t
