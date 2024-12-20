@@ -37,3 +37,9 @@ systemctl reload nginx
 
 
 echo "This is accessible in your local computer via port 5000 http://localhost:5000"
+
+echo "Check 404 message http://localhost:5000/notexist"
+
+echo "Check 50X error message http://localhost:5000/500"
+
+echo "Check 404 message http://localhost:5000/notexist"
