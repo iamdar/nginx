@@ -36,10 +36,27 @@ nginx -t
 systemctl reload nginx
 
 
-echo "This is accessible in your local computer via port 5000 http://localhost:5000"
 
-echo "Check 404 message http://localhost:5000/notexist"
+echo << EOF
+This is accessible in your local computer via port 5000 http://localhost:5000
 
-echo "Check 50X error message http://localhost:5000/500"
+This will for loop 10x to try and access the website
+$ for i in {1..10}; do curl -s http://localhost > /dev/null; done
 
-echo "Check 404 message http://localhost:5000/notexist"
+Check access logs at 
+$ cat /var/log/nginx/CheckmateChuckles.local.access.log
+
+Check error logs at 
+$ cat /var/log/nginx/CheckmateChuckles.local.error.log
+
+
+This will for loop 10x to try and access the website Images. Images folder is case sensitive and its important to have "/"
+$ for i in {1..10}; do curl -s http://localhost/Images/ > /dev/null; done
+Check access logs at 
+$ cat /var/log/nginx/CheckmateChuckles.local.images.access.log
+
+Check error logs at 
+$ cat /var/log/nginx/CheckmateChuckles.local.images.error.log
+
+EOF
+
